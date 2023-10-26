@@ -8,3 +8,6 @@ db_get KEY:
 # KEY and VALUE should be url encoded
 db_set KEY VALUE:
     @curl "http://localhost:4000/set?{{ KEY }}={{ VALUE }}"
+
+test:
+    pytest

@@ -96,7 +96,7 @@ class Handler(BaseHTTPRequestHandler):
         self.do_request(HTTPMethod.GET)
 
 
-def run():
+def start_server():
     with TCPServer((HOST, PORT), Handler) as server:
         print(f"listening on {HOST}:{PORT}")
         server.serve_forever()

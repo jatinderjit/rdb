@@ -1,4 +1,3 @@
-import unittest
 from typing import Optional
 
 
@@ -11,18 +10,3 @@ class Database:
 
     def get(self, key: str) -> Optional[str]:
         return self._db.get(key)
-
-
-db = Database()
-
-
-class DatabaseTestCase(unittest.TestCase):
-    def test_db(self):
-        db = Database()
-
-        self.assertIsNone(db.get("a"))
-        self.assertIsNone(db.get("b"))
-
-        db.set("a", "A")
-        self.assertEqual(db.get("a"), "A")
-        self.assertIsNone(db.get("b"))

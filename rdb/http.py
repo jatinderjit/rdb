@@ -1,7 +1,16 @@
 from http import HTTPStatus
 
-from .db import db
-from .server import JsonResponse, Request, Response, register_route
+from .db import Database
+from .server import JsonResponse, Request, Response, register_route, start_server
+
+db: Database = None
+
+
+def run(database: Database):
+    global db
+    db = database
+
+    start_server()
 
 
 @register_route("/get")
